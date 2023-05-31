@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		font-family: 'poppins','sans-serif';
+	}
+	body{
+		background: url(background.jpg) no-repeat;
+		background-position:center;
+		background-size: cover;
+		height: 100vh;
+		width: 100%;
+	}
+	header
+	{
+		position:absolute;
+		width: 100%;
+		height: 80px;
+		top: 0;
+		left: 0;
+		display: flex;
+
+}
+
+.logo
+{
+	font-size: 20px;
+	color: white;
+	user-select: none;
+	padding-top: 15px;
+	padding-left: 30px;
+	margin-left: 30px;
+}
+
+.link{
+	margin-left: 600px;
+	color: white;
+	position:relative;
+	padding-top: 20px;
+	justify-content: space-around;
+}
+
+ .link a{
+	text-decoration: none;
+	color: white;
+	padding-left: 30px;
+	font-size: 20px;
+	font-weight: 500;
+	text-align: center;
+	padding: 10px;
+	transition: 0.5s;
+}
+
+.btnlogin{
+	position: relative;
+	width: 100px;
+	height: 40px;
+	margin-left: 60px;
+	border:2px solid white;
+	border-radius: 5px;
+	font-weight: 900;
+	color:white;
+	background:transparent;
+	transition: 0.5s;
+}
+
+.btnlogin:hover{
+	color: black;
+	background: white;
+	cursor: pointer;
+}
+
+.link a:hover{
+	position: relative;
+	color: black;
+	background: white;
+	font-weight: 500;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.wraper{
+	position: absolute;
+	padding: 15px;
+	width: 300px;
+	height: 400px;
+	border: 2px solid #c5c9c7;
+    margin-top: 10%;
+	margin-left: 480px;
+    background:rgba(212, 214,213,0.5);
+	border-radius: 20px;
+	backdrop-filter:blur(20px);
+	display: none;
+    transition: 0.3s;
+    overflow: hidden;
+    animation: zoomIn 0.5s ease forwards;
+
+}
+
+
+.login{
+	text-align: center;
+	font-size: 2em;
+	padding-top: 40px;
+	user-select: none;
+}
+
+.mail1{
+	position: relative;
+	margin-top: 40px;
+    /*line-height: 0px;*/
+}
+
+.pass1{
+	margin-top: 40px;
+	position: relative;
+}
+
+.text{
+	width: 90%;
+	height: 30px;
+	background: transparent;
+	border: none;
+	position: relative;
+	outline: none;
+	border-bottom: 2px solid black;
+	font-size: 1.5em;
+	padding:0 30px 0 5px;
+}
+
+.icon{
+	position: absolute;
+	right: 8px;
+	bottom: 20px;
+    font-size: 1em;
+}
+
+.label{
+	position: relative;
+	bottom: 25px;
+	transition: 0.5s;
+	left: 9px;
+	user-select: none;
+}
+
+.text:focus~label,
+.text:valid~label{
+	bottom: 60px;
+	color: black;
+}
+
+.forget-password{
+position: relative;
+left: 80px;
+text-decoration: none;
+color: #162938;
+font-weight: 500;
+}
+
+.login-btn
+{
+width: 80%;
+height: 40px;
+text-align: center;
+background: #162938;
+border: none;
+font-size: 1em;
+font-weight: 500;
+color: white;
+border-radius: 7px;
+transition: 0.5s;
+cursor: pointer;
+}
+
+.login-btn-div{
+text-align: center;
+margin-top: 15px;
+}
+
+.login-btn:hover{
+	background: white;
+	color: black;
+	font-weight: 900;
+}
+
+.para{
+	text-align: center;
+	margin-top: 20px;
+}
+
+.para a{
+	color: #162938;
+	text-decoration: none;
+}
+
+.close
+{
+position: absolute;
+font-size: 2em;
+right: 0px;
+top: 0px;
+padding:0 2px 0 2px;
+background: #162938;
+border: 1px solid #162938;
+border-top-right-radius: 20px;
+border-bottom-left-radius: 20px;
+color: white;
+cursor: pointer;
+}
+
+
+.wraper-in{
+/*display: none;*/
+transition:1s;
+}
+.wraper-in-1{
+	position:relative;
+	display: none;
+	width: 100%;
+	top: -20px;
+}
+
+.wraper-in{
+	/*display: none;*/
+}
+
+.wraper-in-1{
+	display: none;
+	transition: 1s;
+}
+
+.wraper-in-2{
+	display: none;
+	transition: 1s;
+}
+
+#close2{
+	margin-top: 5px;
+	right: -15px;
+}
+
+@media(max-width: 700px){
+	header{
+		display: block;
+	}
+}
+
+@keyframes zoomIn{
+	0%{
+		transform: scale(0);
+		opacity: 0;
+	}
+	100%{
+		transform: scale(1);
+		opacity: 1;
+	}
+	}
+
+
+}
+
+
+
+
+
+
+</style>
+<body>
+<header>
+	<div class="logo">
+	<h2  >Muddasir</h2>
+	</div>
+	<nav class="link">
+		<a href="#" class="home">Home</a>
+		<a href="#">About</a>
+		<a href="#">Service</a>
+		<a href="#">Contact</a>
+		<button class="btnlogin" onclick="cal()">Login</button>
+	</nav>
+</header>
+<div class="wraper" id="login-div">
+	<span class="close" id="close1" onclick="clo()"><ion-icon name="close" ></ion-icon></span>
+	<div class="wraper-in" id="wrapin">
+	
+	<h2 class="login">login</h2>
+	<div class="mail1">
+		<span class="icon"><ion-icon name="mail"></ion-icon></span>
+		<input type="text" name=""  class="text" id="text01" required="">
+		<label class="label" id="label1">Email</label>
+	</div>
+	<div class="pass1">
+		<span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+		<input type="password" name="" class="text" id="text02" required="">
+		<label class="label">Password</label>
+	</div>
+
+	<div >
+		<input type="checkbox" name="" >  Remember me <a href="" onmousedown="cal3()" class="forget-password">Forget Password?</a>
+	</div>
+
+	<div class="login-btn-div">
+		<button class="login-btn" onclick="callogin()">Login</button>
+	</div>
+	<div class="para">
+		<p> Don't have an account? <a href="" onmousedown="cal1()" class="reg">Register</a></p>
+	</div>
+	</div>
+
+<!-- ------------------another form----------------- -->
+<!-- ------------------another form----------------- -->
+<!-- ------------------another form----------------- -->
+
+	<div class="wraper-in-1" id="wraper-in-01">
+		<span class="close" id="close2" onclick="clo()"><ion-icon name="close" ></ion-icon></span>
+	
+	<h2 class="login">Registration</h2>
+	<div class="mail1">
+		<span class="icon"><ion-icon name="person"></ion-icon></span>
+		<input type="text" name="text" class="text" id="text001" required="">
+		<label class="label">User Name</label>
+	</div>
+	<div class="mail1">
+		<span class="icon"><ion-icon name="mail"></ion-icon></span>
+		<input type="text" name="text" class="text" id="text002" required="">
+		<label class="label">Email</label>
+	</div>
+	<div class="pass1">
+		<span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+		<input type="password" name="" class="text" id="text003" required="">
+		<label class="label">Password</label>
+	</div>
+
+	<div >
+		<input type="checkbox" name="" id="text004" required=""> I agree to the Term and Conditions
+	</div>
+
+	<div class="login-btn-div">
+		<button class="login-btn" onclick="regform()">Register</button>
+	</div>
+	<div class="para">
+		<p>already have an account? <a href="" onmousedown="cal2()">Login</a></p>
+	</div>
+	</div>
+
+	<!-- ------------------------forgetpass--------------------------- -->
+	<!-- ------------------------forgetpass--------------------------- -->
+	<!-- ------------------------forgetpass--------------------------- -->
+	<!-- ------------------------forgetpass--------------------------- -->
+
+
+	<div class="wraper-in-2" id="wraper-in-02">
+	
+	<h2 class="login">Forget Password</h2>
+	<div class="mail1">
+		<span class="icon"><ion-icon name="mail"></ion-icon></span>
+		<input type="text" name="text" class="text" id="text1" required="">
+		<label class="label">Email</label>
+	</div>
+	<div class="pass1">
+		<span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+		<input type="password" name="" class="text" id="text2" required="">
+		<label class="label">Password</label>
+	</div>
+	<div class="pass1">
+		<span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+		<input type="password" name="" class="text" id="text3" required="">
+		<label class="label">New Password</label>
+	</div>
+
+	
+	<div class="login-btn-div">
+		<button class="login-btn" id="login-cnfrm" onclick="confrm()">Login</button>
+	</div>
+	
+	</div>
+
+</div>
+
+
+
+</body>
+<script type="text/javascript">
+	
+function cal(){
+	 let a = document.getElementById('login-div');
+	 a.style.display='block';
+	 a.style.height='400px';
+	 let a5 = document.getElementById('wrapin');
+	 a5.style.display='block'; 
+
+	 let a6 = document.getElementById('wraper-in-01');
+	 a6.style.display='none';
+	 let a7 = document.getElementById('wraper-in-02');
+	 a7.style.display='none';
+	 
+}
+
+ function cal1() {
+ 	let x=document.getElementById('wrapin');
+ 	x.style.display='none';
+ 	let y =document.getElementById('wraper-in-01');
+ 	y.style.display='block';
+ 	let z =document.getElementById('login-div');
+ 	z.style.height='430px';
+
+ 	
+ 	
+}
+
+ function cal2(){
+ 	let e = document.getElementById('wraper-in-01');
+ 	e.style.display='none';
+ 	let g = document.getElementById('login-div');
+ 	g.style.height='400px';
+    let u = document.getElementById('wrapin');
+ 	u.style.display='block';
+}
+
+
+ function cal3(){
+ 	let a1 = document.getElementById('wrapin');
+ 	a1.style.display='none';
+ 	let a2 = document.getElementById('wraper-in-02');
+ 	a2.style.display='block';
+ 	a2.style.margintop='-10px';
+
+}
+
+
+ function confrm(){
+ 	let w1 = document.getElementById('text1').value;
+ 	let w2 = document.getElementById('text2').value;
+ 	let w3 = document.getElementById('text3').value;
+ 	if (w1!="" && w2!="" && w3!="") {
+ 		if (w2==w3) {
+         confirm("do you want to login?.");
+ 		}else{
+ 			alert('your password did not match!');
+ 		}
+ 	
+ }else{
+ 	alert('please fill out the all boxes');
+ }
+
+ }
+
+ function callogin(){
+ 	let lg1 = document.getElementById('text01').value;
+ 	let lg2 = document.getElementById('text02').value;
+
+ 	if (lg1!="" && lg2!=""){
+ 		confirm("do you want to Login?.");
+
+ 	}else{
+ 		alert("Please fill out the boxes!");
+        }
+ 	
+ }
+
+ function regform(){
+ 	let regfrm1 = document.getElementById('text001').value;
+ 	let regfrm2 = document.getElementById('text002').value;
+ 	let regfrm3 = document.getElementById('text003').value;
+ 	
+ 	
+ 	if (regfrm1!="" && regfrm2!="" && regfrm3!=""){
+
+ 		confirm("do you want to Register now?.");
+
+
+    }else{
+    	alert("please fill out the boxes!");
+    }
+
+ }
+
+
+
+
+ function clo(){
+ 	let a3 = document.getElementById('login-div');
+ 	a3.style.display='none';
+ }
+
+
+
+</script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
